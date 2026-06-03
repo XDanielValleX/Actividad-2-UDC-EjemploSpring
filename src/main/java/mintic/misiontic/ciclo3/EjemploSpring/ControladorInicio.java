@@ -1,6 +1,5 @@
 package mintic.misiontic.ciclo3.EjemploSpring;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.extern.slf4j.Slf4j;
 import mintic.misiontic.ciclo3.modelo.Usuario;
-import mintic.misiontic.ciclo3.servicio.IUsuarioServicio;
+import mintic.misiontic.ciclo3.EjemploSpring.servicio.IUsuarioServicio;
 
 @Controller
 @Slf4j

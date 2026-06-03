@@ -1,13 +1,12 @@
-package mintic.misiontic.ciclo3.servicio;
+package mintic.misiontic.ciclo3.EjemploSpring.servicio;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import mintic.misiontic.ciclo3.dao.IUsuarioCrud;
+import mintic.misiontic.ciclo3.EjemploSpring.dao.IUsuarioCrud;
 import mintic.misiontic.ciclo3.modelo.Usuario;
 
 @Service
