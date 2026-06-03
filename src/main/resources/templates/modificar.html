@@ -10,7 +10,7 @@
     <br/>
     <form th:action="@{/guardar}" method="POST" th:object="${usuario}">
         <label for="cedula">CEDULA:</label>
-        <input type="text" name="cedula" th:field="*{cedula}" required />
+        <input type="text" name="cedula" th:field="*{cedula}" th:readonly="${usuario.cedula != null}" required />
         <br/>
         <label for="clave">CLAVE:</label>
         <input type="password" name="clave" th:field="*{clave}" />
