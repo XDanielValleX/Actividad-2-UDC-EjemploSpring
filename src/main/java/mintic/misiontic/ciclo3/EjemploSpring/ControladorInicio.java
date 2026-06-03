@@ -2,11 +2,13 @@ package mintic.misiontic.ciclo3.EjemploSpring;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.extern.slf4j.Slf4j;
 import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
@@ -41,4 +43,26 @@ public class ControladorInicio {
         log.info("Ejecutando el controlador Inicio MVC");
         return "index";
     }
+
+    @GetMapping("/agregar")
+    public String agregar(Model modelo) {
+        modelo.addAttribute("usuario", new Usuario());
+        return "modificar";
+    }
+
+    @GetMapping("/editar/{cedula}")
+    public String editar(@PathVariable("cedula") String cedula, Model modelo) {
+        Usuario usuario = new Usuario();
+        usuario.setCedula(cedula);
+        usuario = userServicio.buscar(usuario);
+        modelo.addAttribute("usuario", usuario);
+        return "modificar";
+    }
+
+    @PostMapping("/guardar")
+    public String guardar(Usuario usuario) {
+        userServicio.guardar(usuario);
+        return "redirect:/";
+    }
+
 }
