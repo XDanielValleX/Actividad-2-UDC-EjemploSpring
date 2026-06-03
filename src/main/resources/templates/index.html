@@ -7,20 +7,20 @@
 </head>
 <body>
     <header th:replace="plantillas/partes :: cabecera"></header>
-    <h2>PAGINA DE INICIO</h2>
+    <h2 th:text="#{usuario.formulario}">PAGINA DE INICIO</h2>
     <p th:text="${mensaje}">Mensaje por defecto</p>
     <p th:text="${dato}">Dato por defecto</p>
-    <p><a th:href="@{/agregar}">AGREGAR USUARIO</a></p>
-    <h4>LISTA DE PERSONAS</h4>
+    <p><a th:href="@{/agregar}" th:text="#{usuario.crear}">AGREGAR USUARIO</a></p>
+    <h4 th:text="#{usuario.lista-vacia}">LISTA DE PERSONAS</h4>
     <div th:if="${usuarios} != null and !${usuarios}.empty">
         <table border="1">
             <tr>
-                <th>CEDULA</th>
-                <th>CLAVE</th>
-                <th>NOMBRE</th>
-                <th>EMAIL</th>
-                <th>EDITAR</th>
-                <th>ELIMINAR</th>
+                <th th:text="#{usuario.cedula}">CEDULA</th>
+                <th th:text="#{usuario.clave}">CLAVE</th>
+                <th th:text="#{usuario.nombre}">NOMBRE</th>
+                <th th:text="#{usuario.email}">EMAIL</th>
+                <th th:text="#{accion.editar}">EDITAR</th>
+                <th th:text="#{accion.eliminar}">ELIMINAR</th>
             </tr>
             <tr th:each="u : ${usuarios}">
                 <td th:text="${u.cedula}"></td>
@@ -32,12 +32,12 @@
             </tr>
         </table>
     </div>
-    <div th:if="${usuarios} == null or ${usuarios}.empty">La lista de Usuarios esta Vacia</div>
+    <div th:if="${usuarios} == null or ${usuarios}.empty" th:text="#{usuario.lista-vacia}">La lista de Usuarios esta Vacia</div>
     <hr>
-    <b>CEDULA:</b><span th:text="${alguien.cedula}"></span><br>
-    <b>CLAVE:</b><span th:text="${alguien.clave}"></span><br>
-    <b>NOMBRE:</b><span th:text="${alguien.nombre}"></span><br>
-    <b>EMAIL:</b><span th:text="${alguien.email}"></span><br>
+    <b th:text="#{usuario.cedula}">CEDULA:</b><span th:text="${alguien.cedula}"></span><br>
+    <b th:text="#{usuario.clave}">CLAVE:</b><span th:text="${alguien.clave}"></span><br>
+    <b th:text="#{usuario.nombre}">NOMBRE:</b><span th:text="${alguien.nombre}"></span><br>
+    <b th:text="#{usuario.email}">EMAIL:</b><span th:text="${alguien.email}"></span><br>
     <footer th:replace="plantillas/partes :: pie"></footer>
 </body>
 </html>
