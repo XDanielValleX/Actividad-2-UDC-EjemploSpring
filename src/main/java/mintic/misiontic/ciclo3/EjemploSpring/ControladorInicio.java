@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.extern.slf4j.Slf4j;
 import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
@@ -57,6 +57,14 @@ public class ControladorInicio {
         usuario = userServicio.buscar(usuario);
         modelo.addAttribute("usuario", usuario);
         return "modificar";
+    }
+
+    @GetMapping("/eliminar/{cedula}")
+    public String eliminar(@PathVariable("cedula") String cedula) {
+        Usuario usuario = new Usuario();
+        usuario.setCedula(cedula);
+        userServicio.eliminar(usuario);
+        return "redirect:/";
     }
 
     @PostMapping("/guardar")
