@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.extern.slf4j.Slf4j;
 import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
 import mintic.misiontic.ciclo3.EjemploSpring.servicio.IUsuarioServicio;
+import jakarta.validation.Valid;
 
 @Controller
 @Slf4j
@@ -68,7 +70,10 @@ public class ControladorInicio {
     }
 
     @PostMapping("/guardar")
-    public String guardar(Usuario usuario) {
+    public String guardar(@Valid Usuario usuario, Errors errores) {
+        if (errores.hasErrors()) {
+            return "modificar";
+        }
         userServicio.guardar(usuario);
         return "redirect:/";
     }
