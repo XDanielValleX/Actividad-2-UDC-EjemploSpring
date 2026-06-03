@@ -42,7 +42,7 @@ public class ControladorInicio {
         log.info("Ejecutando el controlador Inicio MVC");
         return "index";
     }
-}
+
     @GetMapping("/agregar")
     public String agregar(Usuario usuario) {
         return "modificar";
@@ -53,4 +53,6 @@ public class ControladorInicio {
         userServicio.guardar(usuario);
         return "redirect:/";
     }
+
+}
 
