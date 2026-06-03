@@ -1,7 +1,7 @@
 package mintic.misiontic.ciclo3.EjemploSpring.dao;
 
 import org.springframework.data.repository.CrudRepository;
-import mintic.misiontic.ciclo3.modelo.Usuario;
+import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
 
 public interface IUsuarioCrud extends CrudRepository<Usuario, String> {
 

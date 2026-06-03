@@ -1,4 +1,4 @@
-package mintic.misiontic.ciclo3.modelo;
+package mintic.misiontic.ciclo3.EjemploSpring.modelo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

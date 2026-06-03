@@ -1,7 +1,7 @@
 package mintic.misiontic.ciclo3.EjemploSpring.servicio;
 
 import java.util.List;
-import mintic.misiontic.ciclo3.modelo.Usuario;
+import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
 
 public interface IUsuarioServicio {
 

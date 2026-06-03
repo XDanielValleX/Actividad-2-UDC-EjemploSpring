@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mintic.misiontic.ciclo3.EjemploSpring.dao.IUsuarioCrud;
-import mintic.misiontic.ciclo3.modelo.Usuario;
+import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
 
 @Service
 public class UsuarioServicioImp implements IUsuarioServicio {
