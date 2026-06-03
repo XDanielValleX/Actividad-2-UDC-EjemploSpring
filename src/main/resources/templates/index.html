@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EjemploSpring MVC</title>
+    <title>EJEMPLO DE APP WEB MVC CON SPRING BOOT</title>
 </head>
 <body>
+    <header th:replace="plantillas/partes :: cabecera"></header>
     <h2>PAGINA DE INICIO</h2>
     <p th:text="${mensaje}">Mensaje por defecto</p>
     <p th:text="${dato}">Dato por defecto</p>
@@ -37,5 +38,6 @@
     <b>CLAVE:</b><span th:text="${alguien.clave}"></span><br>
     <b>NOMBRE:</b><span th:text="${alguien.nombre}"></span><br>
     <b>EMAIL:</b><span th:text="${alguien.email}"></span><br>
+    <footer th:replace="plantillas/partes :: pie"></footer>
 </body>
 </html>

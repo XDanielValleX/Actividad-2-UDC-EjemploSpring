@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import mintic.misiontic.ciclo3.EjemploSpring.modelo.Usuario;
 import mintic.misiontic.ciclo3.EjemploSpring.servicio.IUsuarioServicio;
-import jakarta.validation.Valid;
 
 @Controller
 @Slf4j
